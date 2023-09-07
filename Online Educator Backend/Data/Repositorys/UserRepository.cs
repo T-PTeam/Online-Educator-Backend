@@ -13,7 +13,7 @@ namespace Online_Educator_Backend.Data.Repositorys
                 {
                 new User
                 {
-                     Name = "user",
+                    Name = "user",
                     Email = "TTT@gmail.com",
                     Password = "password",
                     Id = 1,
