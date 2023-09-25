@@ -20,8 +20,7 @@ public class AuthController : Controller
     [HttpPost("/login")]
     public IActionResult Login([FromBody] User loginData)
     {
-        
-        User? user = _authorRepository.GetUsers().FirstOrDefault(p => p.Email == loginData.Email && p.Password == loginData.Password);
+        User? user = _authorRepository.GetUsers()?.FirstOrDefault(p => p.Email == loginData.Email && p.Password == loginData.Password);
 
         
         if (user is null)

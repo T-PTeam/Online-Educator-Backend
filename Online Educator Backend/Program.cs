@@ -7,8 +7,6 @@ using Online_Educator_Backend.Data.Repositorys;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 
 builder.Services.AddAuthorization();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -28,13 +26,14 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
+builder.Services.AddScoped<ICourseRepository, CourseRepository>();
+
 builder.Services.AddControllers();
 
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 
 if (app.Environment.IsDevelopment())
 {
